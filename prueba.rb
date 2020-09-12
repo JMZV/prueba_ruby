@@ -79,11 +79,11 @@ def photos_count(hash)
                                     c += 1
                                     has[valor] = c
                                 when 'MAHLI' 
-                                m1 += 1
-                                has[valor] = m1
+                                    m1 += 1
+                                    has[valor] = m1
                                 when 'NAVCAM'
-                                n1 += 1
-                                has[valor] = n1
+                                    n1 += 1
+                                    has[valor] = n1
                             end
                         end
                     end
@@ -113,15 +113,15 @@ def buid_web_page(hash)
     end
     n = arr.length-1
     lista = ""
-    foto = ""
     for i in (0..n)
         lista = lista + "\t<li><img src='#{arr[i]}'></li> \n\t\t\t"
         
     end   
     
-    return inicio_web() + lista + final_web() 
+    index = inicio_web() + lista + final_web() 
+    File.write('./index.html', index)
 end
 
 
-index = buid_web_page(hash)
-File.write('./index.html', index)
+buid_web_page(hash)
+
